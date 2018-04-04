@@ -1,0 +1,8 @@
+*.db
+*.opendb
+x64/*
+Debug/*
+.vs/*
+Thesis/x64/*
+*.xstd
+*.sat
