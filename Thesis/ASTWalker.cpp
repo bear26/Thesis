@@ -136,17 +136,6 @@ void ASTWalker::WalkAST(const string& path)
         *headerSearchOptions,
         frontendOptions);
 
-
-    std::string testRoot = "C:\\Users\\Yuriy\\Desktop\\Diplom 2018\\tests\\leak\\testsWithLeaks\\";
-    //{
-    //    const clang::FileEntry *pFile = fileManager.getFile(testRoot + "test0.h");
-    //    auto fileId = sourceManager.createFileID(pFile, clang::SourceLocation(), clang::SrcMgr::C_User);
-    //}
-    {
-        const clang::FileEntry *pFile = fileManager.getFile(testRoot + "test0_0.cpp");
-        auto fileId = sourceManager.createFileID(pFile, clang::SourceLocation(), clang::SrcMgr::C_User);
-    }
-
 	const clang::FileEntry* pFile = fileManager.getFile(path.c_str());
     sourceManager.createMainFileID(pFile);
 
@@ -174,10 +163,12 @@ void ASTWalker::WalkAST(const string& path)
 	*/
    //MyASTConsumer astConsumer;
 	
-    astConsumer->SetPath(path);
-    pTextDiagnosticPrinter->BeginSourceFile(languageOptions, &preprocessor);
-    clang::ParseAST(preprocessor, astConsumer, *astContext);
-    pTextDiagnosticPrinter->EndSourceFile();
+    {
+        astConsumer->SetPath(path);
+        pTextDiagnosticPrinter->BeginSourceFile(languageOptions, &preprocessor);
+        clang::ParseAST(preprocessor, astConsumer, *astContext);
+        pTextDiagnosticPrinter->EndSourceFile(); 
+    }
 }
 
 void ASTWalker::DumpStmt(clang::Stmt* s)

@@ -69,7 +69,7 @@ public:
 
 public:
     void SetReturnVarName(const std::string& varName) { returnVarName = varName; isAllocReturns = false; }
-    void ClearReturnVarName() { returnVarName = ""; }
+    void ClearReturnVarName() { returnVarName = ""; isAllocReturns = false;  }
 
     bool IsAllocReturns() { return isAllocReturns; }
 

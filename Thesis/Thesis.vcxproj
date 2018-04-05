@@ -142,6 +142,7 @@
     <ClInclude Include="ESCAASTConsumer.h" />
     <ClInclude Include="ESCAASTVisitor.h" />
     <ClInclude Include="ExecSolver.h" />
+    <ClInclude Include="file.h" />
     <ClInclude Include="FormulaSMT.h" />
     <ClInclude Include="FSM.h" />
     <ClInclude Include="LeafPredicate.h" />

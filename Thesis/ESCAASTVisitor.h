@@ -35,8 +35,8 @@ public:
 private:
 	void Reset();
 	bool ProcessFunction(clang::FunctionDecl* f);
-	bool ProcessStmt(clang::Stmt* stmt);
-	bool ProcessCompound(clang::CompoundStmt* body);
+	bool ProcessStmt(clang::Stmt* stmt, bool = true);
+	bool ProcessCompound(clang::CompoundStmt* body, bool);
 	bool ProcessAssignment(clang::BinaryOperator* binop);
 	bool ProcessDeclaration(clang::VarDecl* vd);
 	bool ProcessDelete(clang::CXXDeleteExpr* del);
@@ -50,6 +50,8 @@ private:
 
 	//std::map<std::string, std::vector<VersionedVariable> > variables;
 	//std::map<std::string, int> variables;
+
+    // внутри функции
 	std::map<std::string, PtrCounter> variables;
 
 	std::vector<VersionedVariable> allocated;
@@ -57,8 +59,6 @@ private:
 
 	FairLeafPredicate fairPred;
 	BranchLeafPredicate branchPred;
-
-    std::set<std::string> allocatedFunctions;
 
     clang::Expr* returnExpr = nullptr;
     std::string returnVarName;

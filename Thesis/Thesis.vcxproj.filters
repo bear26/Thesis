@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\module">
+      <UniqueIdentifier>{abeb7416-ee04-48e5-b64a-11ff138ba1a4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ASTWalker.cpp">
@@ -118,6 +121,9 @@
     </ClInclude>
     <ClInclude Include="Sort.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="file.h">
+      <Filter>Header Files\module</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
